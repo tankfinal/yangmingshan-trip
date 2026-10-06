@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2B2350">
+<meta name="description" content="2026/11/6–11/7 陽明山一泊二日慶生小旅行：草山夜未眠看夕陽夜景、雀客藏居泡湯、擎天崗芒草、竹子湖野菜、二子坪、野人花園。">
+<title>陽明山慶生之旅 🌾</title>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='7' fill='%232B2350'/><circle cx='22' cy='11' r='4' fill='%23F2B263'/><path d='M0 26 9 14l6 7 5-5 12 10v6H0Z' fill='%23E9E2D0'/></svg>">
+<style>
+  :root{
+    --night:#2B2350;
+    --dusk:#5A3E7A;
+    --ember:#E8875A;
+    --gold:#F2B263;
+    --pine:#1F4A3F;
+    --pine-soft:#2F6B5B;
+    --grass:#E9E2D0;
+    --grass-50:#FAF7F0;
+    --grass-100:#F3EEE1;
+    --text:#2A2620;
+    --text-soft:#5C5446;
+    --muted:#8C8270;
+    --card:#FFFFFF;
+    --border:#E6DECB;
+    --shadow:0 4px 14px rgba(43,35,80,.08);
+    --warn-bg:#FFF4E5; --warn-bd:#F2B263; --warn-tx:#7A4A00;
+    --ok-bg:#E9F4EF; --ok-bd:#8CC2AE; --ok-tx:#1F5A47;
+    --info-bg:#EFEDF8; --info-bd:#B9B0DE; --info-tx:#3A2F70;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+    color:var(--text);background:var(--grass-50);
+    line-height:1.6;font-size:15px;-webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--pine-soft);text-decoration:none;font-weight:600}
+  a:hover{text-decoration:underline}
+
+  /* ============ Hero ============ */
+  .hero{position:relative;overflow:hidden;color:#fff;text-align:center;padding:30px 20px 0;background:linear-gradient(180deg,#2B2350 0%,#5A3E7A 38%,#C9667A 70%,#F2B263 100%)}
+  .hero h1{margin:0 0 6px;font-size:24px;letter-spacing:1.5px;font-weight:800;position:relative;z-index:2}
+  .hero .sub{margin:0;font-size:13px;opacity:.9;position:relative;z-index:2}
+  .hero .dates{display:inline-block;margin-top:12px;padding:4px 14px;border-radius:999px;font-size:12.5px;font-weight:700;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);position:relative;z-index:2}
+  .hero .count{margin:10px 0 0;font-size:13px;font-weight:600;position:relative;z-index:2;min-height:21px}
+  .hero .count b{color:var(--gold);font-size:18px}
+  .hero .stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.7}
+  .hero svg.ridge{display:block;width:calc(100% + 40px);height:92px;margin:6px -20px 0;position:relative;z-index:1}
+
+  /* ============ Tabs ============ */
+  .tabs{position:sticky;top:0;z-index:50;display:flex;overflow-x:auto;scrollbar-width:none;background:rgba(250,247,240,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .tabs::-webkit-scrollbar{display:none}
+  .tab{flex:0 0 auto;padding:14px 15px;font:inherit;font-size:14px;font-weight:700;color:var(--text-soft);background:none;border:0;border-bottom:3px solid transparent;cursor:pointer;white-space:nowrap}
+  .tab:hover{color:var(--dusk)}
+  .tab.active{color:var(--night);border-bottom-color:var(--ember)}
+  .tab:first-child{margin-left:auto}
+  .tab:last-child{margin-right:auto}
+
+  /* ============ Main ============ */
+  main{padding:18px 14px 80px;max-width:780px;margin:0 auto}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){.panel.active{animation:none}}
+
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:var(--shadow)}
+  .card h2{margin:0 0 12px;font-size:18px;color:var(--night);display:flex;align-items:center;gap:8px}
+  .card h3{margin:16px 0 8px;font-size:15px}
+  .card p{margin:6px 0}
+  .card ul{margin:6px 0;padding-left:20px}
+  .card li{margin:3px 0}
+  .muted{color:var(--muted);font-size:13px}
+
+  .alert{border-radius:10px;padding:11px 14px;margin:10px 0;font-size:14px;border-left:4px solid}
+  .alert.warn{background:var(--warn-bg);border-color:var(--warn-bd);color:var(--warn-tx)}
+  .alert.ok{background:var(--ok-bg);border-color:var(--ok-bd);color:var(--ok-tx)}
+  .alert.info{background:var(--info-bg);border-color:var(--info-bd);color:var(--info-tx)}
+
+  .table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:8px -4px;padding:0 4px}
+  table{width:100%;border-collapse:collapse;font-size:13.5px}
+  th,td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--border)}
+  th{background:var(--grass-100);color:var(--night);font-weight:700;font-size:13px;white-space:nowrap}
+  tr:last-child td{border-bottom:0}
+
+  /* Booking chips */
+  .chips{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}
+  .chip{border:1px solid var(--border);border-radius:12px;padding:12px 14px;background:var(--grass-50)}
+  .chip .k{font-size:12px;color:var(--muted);font-weight:700;letter-spacing:.5px}
+  .chip .v{font-size:15px;font-weight:800;margin:2px 0}
+  .chip .s{font-size:13px;color:var(--text-soft)}
+  .badge{display:inline-block;padding:1px 8px;border-radius:999px;font-size:11.5px;font-weight:800;vertical-align:2px;margin-left:4px}
+  .badge.ok{background:var(--ok-bg);color:var(--ok-tx);border:1px solid var(--ok-bd)}
+  .badge.wait{background:var(--warn-bg);color:var(--warn-tx);border:1px solid var(--warn-bd)}
+  .badge.walk{background:var(--info-bg);color:var(--info-tx);border:1px solid var(--info-bd)}
+
+  /* Route strip */
+  .route{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13.5px;font-weight:700;color:var(--text-soft);margin:4px 0 10px}
+  .route span{background:var(--grass-100);border:1px solid var(--border);border-radius:999px;padding:3px 10px}
+  .route em{font-style:normal;color:var(--muted)}
+  .maplink{display:inline-flex;align-items:center;gap:6px;margin-top:6px;padding:9px 14px;border-radius:10px;background:var(--pine);color:#fff;font-size:14px}
+  .maplink:hover{text-decoration:none;background:var(--pine-soft)}
+
+  /* Timeline */
+  .tl{list-style:none;margin:6px 0 0;padding:0;position:relative}
+  .tl::before{content:"";position:absolute;left:60px;top:6px;bottom:6px;width:2px;background:var(--border)}
+  .tl li{display:grid;grid-template-columns:52px 1fr;gap:24px;padding:8px 0;position:relative}
+  .tl time{font-weight:800;font-size:14px;color:var(--dusk);text-align:right;font-variant-numeric:tabular-nums;padding-top:1px}
+  .tl li::after{content:"";position:absolute;left:54px;top:15px;width:10px;height:10px;border-radius:50%;background:#fff;border:2px solid var(--ember)}
+  .tl li.hl::after{background:var(--ember)}
+  .tl .what{font-weight:800}
+  .tl .note{font-size:13.5px;color:var(--text-soft);margin-top:2px}
+  .tl .note a{font-weight:700}
+
+  /* Overview day cards */
+  .days{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .day{border-radius:12px;padding:14px;color:#fff;cursor:pointer;border:0;text-align:left;font:inherit}
+  .day.d1{background:linear-gradient(150deg,#5A3E7A,#2B2350)}
+  .day.d2{background:linear-gradient(150deg,#2F6B5B,#1F4A3F)}
+  .day b{display:block;font-size:13px;opacity:.85}
+  .day strong{display:block;font-size:17px;margin:2px 0 6px}
+  .day small{display:block;font-size:12.5px;opacity:.9;line-height:1.5}
+  @media (max-width:520px){.days{grid-template-columns:1fr}}
+
+  /* Places */
+  .place{border-top:1px solid var(--border);padding:12px 0}
+  .place:first-of-type{border-top:0;padding-top:2px}
+  .place h3{margin:0 0 4px;font-size:15.5px}
+  .place .meta{font-size:13px;color:var(--muted);margin-bottom:4px}
+  .place p{margin:4px 0;font-size:14px}
+
+  /* Checklist */
+  .check{list-style:none;padding:0;margin:4px 0}
+  .check li{display:flex;gap:10px;align-items:flex-start;padding:8px 2px;border-bottom:1px dashed var(--border)}
+  .check li:last-child{border-bottom:0}
+  .check input{width:18px;height:18px;margin-top:2px;accent-color:var(--pine);flex:none}
+  .check label{cursor:pointer}
+  .check li.done label{color:var(--muted);text-decoration:line-through}
+
+  /* Contacts */
+  .tel{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--border)}
+  .tel:last-child{border-bottom:0}
+  .tel b{display:block}
+  .tel small{color:var(--muted)}
+  .tel a{flex:none;padding:7px 12px;border-radius:9px;background:var(--grass-100);border:1px solid var(--border);white-space:nowrap}
+
+  footer{text-align:center;font-size:12px;color:var(--muted);padding:0 16px 40px}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stars" aria-hidden="true">
+    <i style="top:14px;left:12%"></i><i style="top:40px;left:24%"></i><i style="top:22px;left:68%"></i>
+    <i style="top:56px;left:84%"></i><i style="top:12px;left:90%"></i><i style="top:70px;left:8%"></i>
+  </div>
+  <h1>陽明山慶生之旅 🎂</h1>
+  <p class="sub">2 人｜土城 → 陽明山 → 土城｜一泊二日・開車</p>
+  <span class="dates">2026 / 11 / 06 (五) — 11 / 07 (六)</span>
+  <p class="count" id="count"></p>
+  <svg class="ridge" viewBox="0 0 800 92" preserveAspectRatio="none" aria-hidden="true">
+    <circle cx="600" cy="62" r="26" fill="#F7C978" opacity=".9"/>
+    <path d="M0 70 90 34 170 58 250 22 340 54 420 30 520 62 610 40 700 60 800 38V92H0Z" fill="#5A3E7A" opacity=".75"/>
+    <path d="M0 80 120 52 220 72 330 46 460 74 560 56 680 76 800 58V92H0Z" fill="#2B2350"/>
+    <g stroke="#E9E2D0" stroke-width="1.6" stroke-linecap="round" fill="none" opacity=".85">
+      <path d="M40 92q2-22 10-34"/><path d="M48 92q4-18 16-26"/><path d="M34 92q-2-16-10-24"/>
+      <path d="M742 92q2-22 10-34"/><path d="M750 92q4-18 16-26"/><path d="M736 92q-2-16-10-24"/>
+    </g>
+    <path d="M0 88h800v4H0Z" fill="#FAF7F0"/>
+  </svg>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="分頁">
+  <button class="tab active" data-tab="overview">🌾 總覽</button>
+  <button class="tab" data-tab="day1">🌃 Day 1</button>
+  <button class="tab" data-tab="day2">⛰️ Day 2</button>
+  <button class="tab" data-tab="food">🍽️ 吃什麼</button>
+  <button class="tab" data-tab="drive">🚗 開車停車</button>
+  <button class="tab" data-tab="prep">✅ 行前準備</button>
+  <button class="tab" data-tab="contact">📞 聯絡</button>
+</nav>
+
+<main>
+
+<!-- ================= 總覽 ================= -->
+<section class="panel active" id="overview">
+  <div class="card">
+    <h2>📌 已確認訂單</h2>
+    <div class="chips">
+      <div class="chip">
+        <div class="k">🏨 住宿</div>
+        <div class="v">雀客藏居台北陽明山 <span class="badge ok">已訂</span></div>
+        <div class="s">11/6 (五) 16:00 起入住・11/7 (六) 11:00 前退房<br>豪華雙人房・1 晚（確認碼見 Booking App）</div>
+      </div>
+      <div class="chip">
+        <div class="k">🌃 慶生晚餐</div>
+        <div class="v">草山夜未眠 <span class="badge ok">已訂</span></div>
+        <div class="s">11/6 (五) <b>17:00</b>・2 位大人<br>訂位通知在 LINE</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🗺️ 兩天路線</h2>
+    <div class="days">
+      <button class="day d1" type="button" data-go="day1">
+        <b>DAY 1 · 11/6 (五)</b>
+        <strong>入住 → 夕陽夜景慶生</strong>
+        <small>雀客藏居 check-in → 草山夜未眠 17:00（17:10 日落）→ 回飯店泡湯</small>
+      </button>
+      <button class="day d2" type="button" data-go="day2">
+        <b>DAY 2 · 11/7 (六)</b>
+        <strong>芒草 → 野菜 → 森林咖啡</strong>
+        <small>擎天崗＋魚路古道 → 竹子湖杉木林 → 二子坪 → 野人花園 → 回家</small>
+      </button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>💡 這趟的重點</h2>
+    <ul>
+      <li><b>週五晚上就是慶生</b>：17:00 入座，先看日落再看台北夜景。</li>
+      <li><b>11 月初是芒草季</b>：擎天崗一整片銀白色，週六 <b>9 點前</b>到才停得到車。</li>
+      <li><b>不愛吃雞</b>：竹子湖選野菜為主的店，點炒山蘇、麻油川七、地瓜湯。</li>
+      <li><b>RX350 大車</b>：所有點都走主要道路；草山夜未眠在巷弄裡，最後一段慢慢開。</li>
+    </ul>
+    <div class="alert info">🌅 <b>11/6 陽明山日落 17:10</b>（NOAA 公式計算）。晚餐 17:00 入座剛好。</div>
+  </div>
+</section>
+
+<!-- ================= Day 1 ================= -->
+<section class="panel" id="day1">
+  <div class="card">
+    <h2>🌃 Day 1｜11/6 (五) 慶生之夜</h2>
+    <div class="route"><span>土城</span><em>→</em><span>雀客藏居</span><em>→</em><span>草山夜未眠</span><em>→</em><span>雀客藏居</span></div>
+    <ol class="tl">
+      <li><time>14:30</time><div><div class="what">土城出發</div><div class="note">避開 16:30 之後的下班車潮。走台 64 → 士林 → 仰德大道，或洲美快速道路 → 北投 → 陽投公路。不塞約 50–60 分。</div></div></li>
+      <li><time>15:30</time><div><div class="what">雀客藏居 check-in</div><div class="note">官方入住 16:00 起，已申請 15:00–16:00 提早入住（等飯店回覆）。不能提早就先把行李寄放在櫃台。</div></div></li>
+      <li><time>16:30</time><div><div class="what">開車去草山夜未眠</div><div class="note">約 10 分鐘。停車位很少，<b>提早到先找車位</b>。</div></div></li>
+      <li class="hl"><time>17:00</time><div><div class="what">🎂 草山夜未眠・慶生晚餐</div><div class="note">17:10 日落 → 天色從粉紅轉紫藍 → 台北夜景亮起。有兩人「浪漫情人餐」；熱炒招牌是海鮮蟹黃豆腐、金莎蝦球、三杯中卷。園區有旋轉木馬、天空步道、心型情侶座可以拍照。</div></div></li>
+      <li><time>19:30</time><div><div class="what">回飯店泡湯 ♨️</div><div class="note">房內有沒有溫泉待確認；沒有的話用大眾溫泉池。</div></div></li>
+    </ol>
+    <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/新北市土城區/雀客藏居台北陽明山,台北市士林區格致路237號/草山夜未眠,台北市士林區東山路25巷81弄99號/雀客藏居台北陽明山,台北市士林區格致路237號/">🗺️ 開啟 Google Maps 路線</a>
+  </div>
+  <div class="card">
+    <h2>📝 注意</h2>
+    <div class="alert warn">⚠️ 草山夜未眠在<b>東山路的巷弄</b>裡，最後一段路比較窄；晚上幾乎找不到車位，有人是停山下再走上去。</div>
+    <div class="alert info">🧥 11 月山上晚上大約十幾度，戶外觀景區風大，帶外套。</div>
+  </div>
+</section>
+
+<!-- ================= Day 2 ================= -->
+<section class="panel" id="day2">
+  <div class="card">
+    <h2>⛰️ Day 2｜11/7 (六) 陽明山一日遊</h2>
+    <div class="route"><span>雀客藏居</span><em>→</em><span>擎天崗</span><em>→</em><span>竹子湖</span><em>→</em><span>二子坪</span><em>→</em><span>野人花園</span><em>→</em><span>土城</span></div>
+    <ol class="tl">
+      <li><time>07:30</time><div><div class="what">早餐</div><div class="note">飯店早餐（若房型有含），沒有就到山仔后／文化大學一帶的早餐店。</div></div></li>
+      <li><time>08:30</time><div><div class="what">退房出發</div><div class="note">行李直接放車上，之後不用再回飯店。</div></div></li>
+      <li class="hl"><time>08:45</time><div><div class="what">🌾 擎天崗＋魚路古道</div><div class="note">10 月中以後是芒草季，草原上還有放牧的水牛。從擎天崗往<b>城門（隘門）</b>走，再往魚路古道下坡一段折返：以前金山漁民挑魚進台北的古道，芒草一樣多、人少很多。約 2 小時。</div></div></li>
+      <li class="hl"><time>11:30</time><div><div class="what">🥬 午餐：杉木林餐廳</div><div class="note">庭院大樹下吃現炒野菜，消費滿 300 元地瓜湯、米粉湯免費喝到飽。<b>只收現金</b>。客滿就改隔壁 <a href="#food" data-go="food">山園野菜餐廳</a>。</div></div></li>
+      <li><time>13:30</time><div><div class="what">🌲 二子坪步道</div><div class="note">約 2 公里、坡度平緩、全程樹蔭，單程 30–40 分。終點有小湖和綠地。導航設「二子坪遊客中心」，旁邊有停車場。</div></div></li>
+      <li class="hl"><time>15:15</time><div><div class="what">☕ 野人花園</div><div class="note">森林玻璃屋＋英式花園溫室，山景第一排。每人入園 250 元可折飲料、不限時。不能訂位。</div></div></li>
+      <li><time>16:30</time><div><div class="what">下山回土城 🏠</div><div class="note">週六傍晚仰德大道下山方向會塞：<b>16:30 前走</b>，不然就坐到 18:30 後再走。</div></div></li>
+    </ol>
+    <a class="maplink" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/雀客藏居台北陽明山,台北市士林區格致路237號/擎天崗/陽明山竹子湖杉木林餐廳,台北市北投區竹子湖路55-12號/二子坪遊客中心/陽明山野人花園,台北市士林區菁山路131巷13-1號/新北市土城區/">🗺️ 開啟 Google Maps 路線</a>
+  </div>
+  <div class="card">
+    <h2>📝 注意</h2>
+    <div class="alert warn">⚠️ <b>11 月開始吹東北季風</b>：擎天崗風大、可能起霧，帶防風外套。</div>
+    <div class="alert info">💵 杉木林只收現金，記得帶。</div>
+  </div>
+</section>
+
+<!-- ================= 吃什麼 ================= -->
+<section class="panel" id="food">
+  <div class="card">
+    <h2>🌃 慶生晚餐（Day 1）</h2>
+    <div class="place">
+      <h3>草山夜未眠 <span class="badge ok">已訂 17:00</span></h3>
+      <div class="meta">台北市士林區東山路25巷81弄99號・02-2862-3751</div>
+      <p>陽明山半山腰的夜景餐廳，有室內座位與開闊的戶外觀景露臺。兩人可點「浪漫情人餐」，熱炒以海鮮蟹黃豆腐、金莎蝦球、三杯中卷為主。</p>
+      <p class="muted">每人低消 250 元＋10% 服務費，用餐 3 小時。停車場有，但晚上很難停。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🥬 竹子湖午餐（Day 2）</h2>
+    <p class="muted">我們不愛吃雞：以下都可以只點野菜熱炒。</p>
+    <div class="place">
+      <h3>杉木林餐廳 <span class="badge walk">首選</span></h3>
+      <div class="meta">竹子湖路55-12號・02-2861-7159・10:30–18:00（週四休）・可訂位・只收現金</div>
+      <p>庭院大樹下用餐，野菜現炒；滿 300 元地瓜湯、米粉湯免費續。有免費停車場，大車最好停。假日早點到，或接近 14:00 再去。</p>
+    </div>
+    <div class="place">
+      <h3>山園野菜餐廳 <span class="badge walk">備案</span></h3>
+      <div class="meta">竹子湖路55-12號旁・02-2861-1558・11:00–19:30（週二休）</div>
+      <p>網友說「山菜比白斬雞強」。沒有菜單，直接跟老闆點；戶外座位在森林裡，桌間有小溪流。車位少，只有斜對面空地和路邊。</p>
+    </div>
+    <div class="place">
+      <h3>故鄉海芋餐廳</h3>
+      <div class="meta">竹子湖海芋田旁</div>
+      <p>平價熱炒、份量大。推薦炒山蘇、麻油川七、薑汁地瓜湯，飯後一份銀絲卷。</p>
+    </div>
+    <div class="place">
+      <h3>頂湖小鎮</h3>
+      <div class="meta">竹子湖路68號</div>
+      <p>有停車場，消費滿 200 元折停車費；每人低消 150 元、不收服務費，外面是綠色花棚。</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>☕ 景觀咖啡（Day 2 下午）</h2>
+    <div class="place">
+      <h3>野人花園</h3>
+      <div class="meta">菁山路131巷13-1號・11:00–20:00（週二休）・不能訂位</div>
+      <p>玻璃屋＋花園溫室，入園 250 元可折一杯飲料，不限時。有停車場，但常停滿。</p>
+    </div>
+    <div class="place">
+      <h3>蒙馬特影像咖啡</h3>
+      <div class="meta">野人花園隔壁</div>
+      <p>野人花園客滿時的備案。</p>
+    </div>
+  </div>
+  <p class="muted" style="text-align:center">營業時間依 2026/10 網路資料整理，出發前再確認一次。</p>
+</section>
+
+<!-- ================= 開車停車 ================= -->
+<section class="panel" id="drive">
+  <div class="card">
+    <h2>🚗 車程與塞車</h2>
+    <div class="table-wrap"><table>
+      <tr><th>路段</th><th>時間</th><th>提醒</th></tr>
+      <tr><td>土城 → 雀客藏居</td><td>50–60 分</td><td>16:30–19:00 下班尖峰可能 1.5 小時以上（士林、承德路、洲美快速道路）</td></tr>
+      <tr><td>雀客藏居 → 草山夜未眠</td><td>約 10 分</td><td>巷弄窄，提早到找車位</td></tr>
+      <tr><td>擎天崗</td><td>—</td><td>芒草季週末 9 點前到</td></tr>
+      <tr><td>陽明山 → 土城</td><td>約 1 小時</td><td>週六傍晚下山會塞：16:30 前或 18:30 後</td></tr>
+    </table></div>
+  </div>
+  <div class="card">
+    <h2>🅿️ 停車一覽（RX350）</h2>
+    <div class="table-wrap"><table>
+      <tr><th>地點</th><th>停車</th></tr>
+      <tr><td>雀客藏居</td><td>訂房時已備註「開車、希望有停車位」，等飯店回覆</td></tr>
+      <tr><td>草山夜未眠</td><td>有停車場，但晚上一位難求；提早到</td></tr>
+      <tr><td>擎天崗</td><td>停車場，週末早上很快滿</td></tr>
+      <tr><td>杉木林餐廳</td><td>✅ 免費停車場（大車最好停）</td></tr>
+      <tr><td>二子坪</td><td>遊客中心旁停車場</td></tr>
+      <tr><td>野人花園</td><td>自有停車場，常停滿</td></tr>
+    </table></div>
+    <div class="alert warn">⚠️ 夜間山路沒路燈的路段很暗、彎多，晚餐後慢慢開回飯店。</div>
+  </div>
+</section>
+
+<!-- ================= 行前準備 ================= -->
+<section class="panel" id="prep">
+  <div class="card">
+    <h2>✅ 訂位與確認</h2>
+    <ul class="check" data-key="ym-prep-book">
+      <li class="done"><input type="checkbox" id="b1" checked><label for="b1">訂雀客藏居 11/6 一晚</label></li>
+      <li class="done"><input type="checkbox" id="b2" checked><label for="b2">訂草山夜未眠 11/6 17:00・2 位</label></li>
+      <li><input type="checkbox" id="b3"><label for="b3">打給杉木林 02-2861-7159，訂 11/7 中午 2 位</label></li>
+      <li><input type="checkbox" id="b4"><label for="b4">等雀客藏居回覆：提早入住、停車、慶生服務</label></li>
+      <li><input type="checkbox" id="b5"><label for="b5">確認房間有沒有房內溫泉、是不是雙人床、有沒有含早餐</label></li>
+    </ul>
+  </div>
+  <div class="card">
+    <h2>🎒 要帶的</h2>
+    <ul class="check" data-key="ym-prep-pack">
+      <li><input type="checkbox" id="p1"><label for="p1">現金（杉木林只收現金）</label></li>
+      <li><input type="checkbox" id="p2"><label for="p2">防風外套（山上晚上十幾度、擎天崗風大）</label></li>
+      <li><input type="checkbox" id="p3"><label for="p3">好走的鞋（魚路古道、二子坪）</label></li>
+      <li><input type="checkbox" id="p4"><label for="p4">盥洗用品（很多旅宿已不提供一次性備品）</label></li>
+    </ul>
+    <p class="muted">勾選狀態只存在這台裝置的瀏覽器裡。</p>
+  </div>
+</section>
+
+<!-- ================= 聯絡 ================= -->
+<section class="panel" id="contact">
+  <div class="card">
+    <h2>📞 店家電話</h2>
+    <div class="tel"><div><b>草山夜未眠</b><small>慶生晚餐 11/6 17:00</small></div><a href="tel:+886228623751">02-2862-3751</a></div>
+    <div class="tel"><div><b>杉木林餐廳</b><small>11/7 午餐・週四休</small></div><a href="tel:+886228617159">02-2861-7159</a></div>
+    <div class="tel"><div><b>山園野菜餐廳</b><small>午餐備案・週二休</small></div><a href="tel:+886228611558">02-2861-1558</a></div>
+  </div>
+  <div class="card">
+    <h2>🆘 緊急</h2>
+    <div class="tel"><div><b>報案</b><small>警察</small></div><a href="tel:110">110</a></div>
+    <div class="tel"><div><b>救護・消防</b><small>有人受傷</small></div><a href="tel:119">119</a></div>
+  </div>
+  <div class="card">
+    <h2>📍 地址</h2>
+    <div class="tel"><div><b>雀客藏居台北陽明山</b><small>台北市士林區格致路237號</small></div><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=雀客藏居台北陽明山">地圖</a></div>
+    <div class="tel"><div><b>草山夜未眠</b><small>台北市士林區東山路25巷81弄99號</small></div><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=草山夜未眠">地圖</a></div>
+    <div class="tel"><div><b>杉木林餐廳</b><small>台北市北投區竹子湖路55-12號</small></div><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=陽明山竹子湖杉木林餐廳">地圖</a></div>
+    <div class="tel"><div><b>野人花園</b><small>台北市士林區菁山路131巷13-1號</small></div><a target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=陽明山野人花園">地圖</a></div>
+  </div>
+</section>
+
+</main>
+
+<footer>最後更新：2026/10/06 · made with ♥ for 老婆生日</footer>
+
+<script>
+(function(){
+  var tabs = document.querySelectorAll(".tab");
+  var panels = document.querySelectorAll(".panel");
+
+  function show(id, push){
+    if (!document.getElementById(id)) id = "overview";
+    tabs.forEach(function(t){ t.classList.toggle("active", t.dataset.tab === id); });
+    panels.forEach(function(p){ p.classList.toggle("active", p.id === id); });
+    var cur = document.querySelector('.tab[data-tab="' + id + '"]');
+    if (cur && cur.scrollIntoView) cur.scrollIntoView({block:"nearest", inline:"center"});
+    if (push) history.replaceState(null, "", "#" + id);
+  }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.dataset.tab, true); window.scrollTo({top:0}); }); });
+  document.querySelectorAll("[data-go]").forEach(function(el){
+    el.addEventListener("click", function(e){ e.preventDefault(); show(el.dataset.go, true); window.scrollTo({top:0}); });
+  });
+  show(location.hash.slice(1) || "overview", false);
+
+  // Countdown, in Taipei time regardless of the viewer's zone.
+  var DAY = 864e5, TZ = 8 * 36e5;
+  var start = Date.UTC(2026, 10, 6) - TZ;
+  var today = Math.floor((Date.now() + TZ) / DAY) * DAY - TZ;
+  var diff = Math.round((start - today) / DAY);
+  var c = document.getElementById("count");
+  if (diff > 0) c.innerHTML = "距離慶生還有 <b>" + diff + "</b> 天";
+  else if (diff === 0) c.innerHTML = "🎂 今天是 <b>Day 1</b>，生日快樂！";
+  else if (diff === -1) c.innerHTML = "⛰️ 今天是 <b>Day 2</b>";
+  else c.textContent = "旅程已結束 ✨";
+
+  // Checklist state lives in this browser only.
+  document.querySelectorAll(".check").forEach(function(list){
+    var key = list.dataset.key, saved = null;
+    try { saved = JSON.parse(localStorage.getItem(key) || "null"); } catch(e) {}
+    var boxes = list.querySelectorAll("input");
+    boxes.forEach(function(b){
+      if (saved && b.id in saved) b.checked = saved[b.id];
+      b.closest("li").classList.toggle("done", b.checked);
+      b.addEventListener("change", function(){
+        b.closest("li").classList.toggle("done", b.checked);
+        var s = {}; boxes.forEach(function(x){ s[x.id] = x.checked; });
+        try { localStorage.setItem(key, JSON.stringify(s)); } catch(e) {}
+      });
+    });
+  });
+})();
+</script>
+</body>
+</html>
